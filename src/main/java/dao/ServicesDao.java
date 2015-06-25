@@ -12,10 +12,11 @@ import org.springframework.jdbc.core.RowMapper;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 import entities.Service;
+import entities.StatusCodes;
 
 public class ServicesDao {
 	
-	DataSource datasource;
+	private DataSource datasource;
 	
 	public ServicesDao() {
 		
@@ -32,9 +33,13 @@ public class ServicesDao {
 	public List<Service> getServicesByEnvironment(String environment) {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(datasource);
 		return jdbcTemplate.query("GetServices_ByEnvironment ?", new Object[]{environment},new DataMapper());
-		
 	}
-
+	
+	public int updateServiceStatus(String serviceName, StatusCodes status) {
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(datasource);
+		return jdbcTemplate.update("updateServiceStatus ?, ?", new Object[]{serviceName, status.toString()});
+	}
+	
 	protected static final class DataMapper implements RowMapper<Service> {
 	    @Override
 	    public Service mapRow(ResultSet rs, int rowNum) throws SQLException {
