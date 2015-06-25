@@ -1,10 +1,63 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
+<head>
+    <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <p th:text="'Hi...Hello, ' + ${name} + '!'" />
+
+
+<p style="background:cyan;font-size:40px;padding-left:400px">Counsel Link Health Check!</p>
+
+<p style="font-size:35px;padding-left:550px" th:text="${name}"/>
+
+<div style="padding-left:500px"><table border="2" >
+    <thead>
+    <th>Service</th>
+    <th>Description</th>
+    <th>Status</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Service 1</td>
+        <td>Service 1 description here.</td>
+        <td style="background-color:#90EEEE">Ok!</td>
+    </tr>
+    <tr>
+        <td>Service 2</td>
+        <td>Service 2 Description</td>
+        <td style="background-color:red">Not ok!</td>
+    </tr>
+    <tr>
+        <td>Service 3</td>
+        <td>Service 3 desc</td>
+        <td style="background-color:#90EEEE">Ok!</td>
+    </tr>
+    <tr>
+        <td>Service 4</td>
+        <td>Service 4 Description</td>
+        <td style="background-color:red">Not ok!</td>
+    </tr>
+
+    <tr>
+        <td>Service 5</td>
+        <td>Service 5 desc</td>
+        <td style="background-color:#90EEEE">Ok!</td>
+    </tr>
+    <tr>
+        <td>Service 6</td>
+        <td>Service 6 Description</td>
+        <td style="background-color:red">Not ok!</td>
+    </tr>
+
+    </tbody>
+</table>
+
+</div>
+
 </body>
 </html>
