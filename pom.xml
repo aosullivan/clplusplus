@@ -16,12 +16,9 @@
     <dependencies>
     
 	    <dependency>
-		    <groupId>com.microsoft.sqlserver</groupId>
+		    <groupId>com.microsoft</groupId>
 		    <artifactId>sqljdbc4</artifactId>
 		    <version>4.0.2206</version>
-		    <scope>system</scope>
-		    <systemPath>${basedir}/sqljdbc4-4.0.2206.jar</systemPath>
-		    <optional>true</optional>
 		</dependency>
     
 	    <dependency>
@@ -59,8 +56,18 @@
             <id>spring-milestone</id>
             <url>https://repo.spring.io/libs-release</url>
         </repository>
+        
+        <repository>
+            <snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+            </snapshots>        
+            <id>examen</id>
+            <name>Local Examen Repository</name>
+            <url>http://bamboo.examen.com:8080/artifactory/repo</url>
+        </repository>
     </repositories>
-
+        
     <pluginRepositories>
         <pluginRepository>
             <id>spring-milestone</id>

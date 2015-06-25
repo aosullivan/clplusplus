@@ -8,12 +8,14 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 import entities.Service;
 import entities.StatusCodes;
 
+@Component
 public class ServicesDao {
 	
 	private DataSource datasource;
@@ -47,6 +49,7 @@ public class ServicesDao {
 	        service.setName(rs.getString("ServiceName"));
 	        service.setDescription(rs.getString("ServiceDescription"));
 	        service.setStatus(rs.getString("Status"));
+	        service.setUrl(rs.getString("ServiceUrl"));
 	        return service;
 	    }
 
