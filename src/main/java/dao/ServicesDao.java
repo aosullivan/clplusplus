@@ -22,7 +22,7 @@ import entities.StatusCodes;
 @Component
 public class ServicesDao {
 	
-	static DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+	static DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 	
 	private DataSource datasource;
 	
