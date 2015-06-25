@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -19,6 +21,8 @@ import entities.StatusCodes;
 
 @Component
 public class ServicesDao {
+	
+	static DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 	
 	private DataSource datasource;
 	
@@ -55,6 +59,7 @@ public class ServicesDao {
 	        service.setDescription(rs.getString("ServiceDescription"));
 	        service.setStatus(rs.getString("Status"));
 	        service.setUrl(rs.getString("ServiceUrl"));
+	        service.setUpdatedDate(df.format(rs.getDate("Service_lastUpdate")));
 	        return service;
 	    }
 

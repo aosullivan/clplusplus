@@ -6,6 +6,7 @@ public class Service {
 	private String status;
 	private String description;
 	private String url;
+	private String updatedDate;
 
 	public String getName() {
 		return name;
@@ -44,6 +45,15 @@ public class Service {
 	public String toString() {
 		return "Service [name=" + name + ", status=" + status
 				+ ", description=" + description + "]";
+	}
+
+	public void setUpdatedDate(String updatedDate) {
+		this.updatedDate = updatedDate;
+		
+	}
+
+	public String getUpdatedDate() {
+		return updatedDate;
 	}
 
 
