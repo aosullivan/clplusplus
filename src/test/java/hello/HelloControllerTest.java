@@ -49,30 +49,6 @@ public class HelloControllerTest {
 	}
 
 	@Test
-	public void addDbConnection() {
-		
-		SQLServerDataSource ds = new SQLServerDataSource();
-        ds.setUser("clplus");
-        ds.setPassword("CL++Team123");
-        ds.setServerName("clplusplus2.cdqjwu6tacyy.us-east-1.rds.amazonaws.com");
-        ds.setPortNumber(1433); 
-        ds.setDatabaseName("clplusplus");
-        
-        JdbcTemplate jdbc = new JdbcTemplate(ds);
-        
-        SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbc)
-        	.withProcedureName("addEnvironment");
-       
-        Map<String, Object> inParamMap = new HashMap<String, Object>();
-        inParamMap.put("EnvironmentName", "prod");
-        inParamMap.put("Description", "production");
-        SqlParameterSource in = new MapSqlParameterSource(inParamMap);
-        
-        Map<String, Object> result = jdbcCall.execute(in);
-        System.out.println(result);
-	}
-	
-	@Test
 	public void pingCouncelLink() throws UnknownHostException, IOException {
 	
 		String url = "https://www.counsellink.net/login/login.jsp?force";
