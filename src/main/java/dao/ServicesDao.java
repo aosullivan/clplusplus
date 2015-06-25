@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
@@ -19,6 +21,8 @@ import entities.StatusCodes;
 public class ServicesDao {
 	
 	private DataSource datasource;
+	
+	private Log log = LogFactory.getLog(ServicesDao.class);
 	
 	public ServicesDao() {
 		
@@ -38,6 +42,7 @@ public class ServicesDao {
 	}
 	
 	public int updateServiceStatus(String serviceName, StatusCodes status) {
+		log.info("Updating:" +serviceName+ ":"+status);
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(datasource);
 		return jdbcTemplate.update("updateServiceStatus ?, ?", new Object[]{serviceName, status.toString()});
 	}
