@@ -68,8 +68,8 @@ public class HelloControllerTest {
         inParamMap.put("Description", "production");
         SqlParameterSource in = new MapSqlParameterSource(inParamMap);
         
-        
-        jdbcCall.execute(in);        
+        Map<String, Object> result = jdbcCall.execute(in);
+        System.out.println(result);
 	}
 	
 	@Test
